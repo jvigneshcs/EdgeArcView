@@ -3,4 +3,4 @@ Draw Arc inside UIView
 
 #Screenshot
 
-![Screenshot](EdgeArcView/ScreenshotEdgeArcView.png)
+![Screenshot](/ScreenshotEdgeArcView.png)
