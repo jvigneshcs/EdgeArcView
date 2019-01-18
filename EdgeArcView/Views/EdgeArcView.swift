@@ -8,22 +8,22 @@
 
 import UIKit
 
-enum ArcLocation: UInt8 {
+public enum ArcLocation: UInt8 {
     case Top;
     case Right;
     case Bottom;
     case Left;
 }
 
-@IBDesignable class EdgeArcView: UIView {
+@IBDesignable public class EdgeArcView: UIView {
     
-    @IBInspectable var fillColor: UIColor = .white
-    @IBInspectable var arcLength: CGFloat = 10
-    @IBInspectable var arcFillLength: Bool = false
-    @IBInspectable var arcModeClearBlend: Bool = true
+    @IBInspectable public var fillColor: UIColor = .white
+    @IBInspectable public var arcLength: CGFloat = 10
+    @IBInspectable public var arcFillLength: Bool = false
+    @IBInspectable public var arcModeClearBlend: Bool = true
     
     #if TARGET_INTERFACE_BUILDER
-    @IBInspectable var arcLocation: UInt8 = 2 {
+    @IBInspectable public var arcLocation: UInt8 = 2 {
         didSet {
             if arcLocation > 3 {
                 arcLocation = 3
@@ -31,14 +31,14 @@ enum ArcLocation: UInt8 {
         }
     }
     #else
-    var arcLocation: ArcLocation = .Bottom
+    public var arcLocation: ArcLocation = .Bottom
     #endif
     
     let π: CGFloat = CGFloat(Double.pi)
 
     // Only override draw() if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
+    override public func draw(_ rect: CGRect) {
         // Drawing code
         #if TARGET_INTERFACE_BUILDER
         let arcLocation = ArcLocation(rawValue: self.arcLocation)!
